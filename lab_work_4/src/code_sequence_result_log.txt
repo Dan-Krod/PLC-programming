@@ -1,0 +1,27 @@
+Code Sequence Test Log: 0 → 6 → 1 → 3
+
+[✓] Step 1 — Key "0" pressed
+      → M10.0 set (Input: I0.0)
+      → Triggered M20.0 (first digit accepted)
+
+[✓] Step 2 — Key "6" pressed
+      → M11.0 set (Input: I0.6)
+      → Triggered M21.0 (second digit accepted)
+
+[✓] Step 3 — Key "1" pressed
+      → M12.0 set (Input: I0.1)
+      → Triggered M22.0 (third digit accepted)
+
+[✓] Step 4 — Key "3" pressed
+      → M13.0 set (Input: I0.3)
+      → Triggered M23.0 (final digit accepted)
+
+[✓] Full sequence matched: M20.0 ∧ M21.0 ∧ M22.0 ∧ M23.0 = TRUE
+      → M90.0 activated (Unlock condition)
+      → Timer S_PULSE (S5T#3S110MS) triggered
+      → Lock opens for 3 sec 11 ms (M1.6 = 1)
+
+[✓] After 3.11 seconds
+      → Timer elapsed
+      → M1.6 reset automatically
+      → Lock closed (M2.0 = 1)
