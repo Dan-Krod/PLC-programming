@@ -6,7 +6,7 @@
 
 Develop a traffic light control system in **SIMATIC STEP 7**, using memory blocks and timer functions. Configure relevant memory regions and simulate sequential light transitions using **S7-PLCSIM**. Timer types applied include **S_PULSE** and **S_ODT**.
 
-All source materials, screenshots, logic diagrams, and symbolic address mappings are located in the `src/` folder.
+_All reference files (program listings, tables, logic expressions, screenshots) are provided in the `src/` folder._
 
 ---
 
