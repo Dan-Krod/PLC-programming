@@ -77,8 +77,7 @@ The lab objective was fully achieved. The entire development flow—from hardwar
 
 Key Results:
 - 📌 Correct FBD logic synthesized and tested (`FBD_Program_1.png`, `FBD_Program_2.png`)
-- 📌 Accurate truth table and minimized Karnaugh-based logic (`truth_table_Q01_Q03.pdf`, `karnaugh_map_Q01_Q03.png`)
-- 📌 Logic outputs Q0.1 and Q0.3 behaved as expected across tested input permutations (`simulation_results_PLCSIM.png`)
-- 📌 Clean, modular structure of project and reusability ensured via `project_OB1_backup.zip`
+- 📌 Accurate truth table and minimized Karnaugh-based logic (`truth_table_Q01_Q03.md`, `karnaugh_map_Q01_Q03.png`)
+- 📌 Logic outputs Q0.1 and Q0.3 behaved as expected across tested input permutations (`simulation_results_PLCSIM_program_1/2.png`)
 
 This assignment solidified hands-on skills in configuring PLC systems, applying formal logic design, and developing functional control solutions through visual programming paradigms. These competencies lay the groundwork for real-world automation and diagnostic scenarios.
