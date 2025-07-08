@@ -6,7 +6,7 @@
 
 Design and implement a digital code lock using **SIMATIC STEP 7**, with a specific input sequence (0-6-1-3) to unlock the system. The control algorithm uses SR-trigger logic and memory markers. The lock opens for a set time if the correct sequence is entered; otherwise, it resets.
 
-All source files, screenshots, symbolic tables, and program descriptions are located in the `src/` folder.
+_All reference files (program listings, tables, logic expressions, screenshots) are provided in the `src/` folder._
 
 ---
 
@@ -122,6 +122,6 @@ Simulation showed expected functionality across multiple test inputs:
 - ✅ SR-latch behavior verified using marker bits and conditional resets  
 - ✅ No glitching from repeated digits (e.g. 2-6-6-0 did not trigger unlock)  
 
-> All logical flow and behavior analysis is provided in `code_sequence_result_log.txt` and `block_descriptions.pdf`.
+> All logical flow and behavior analysis is provided in `code_sequence_result_log.txt` and `block_descriptions.md`.
 
 This lab built strong hands-on skills in managing state-based logic using memory bits, edge detection, and timers within S7 PLC systems. The code lock algorithm could be easily adapted into secure access control or keypad-controlled automation scenarios.
