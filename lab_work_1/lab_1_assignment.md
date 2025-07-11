@@ -1,109 +1,88 @@
-# Assignment Report – Lab 1  
-## Installation and Configuration of Simatic Manager (STEP 7 PRO 2017)
----
-
-## 🧩 Task Description
-
-The objective is to familiarize students with the process of preparing a software environment for programming Siemens S7 PLCs using **STEP 7 Professional 2017**.  
-The core deliverable is a configured and licensed copy of Simatic Manager, enabling practical work with industrial controllers.
-
-_All reference files (installation package and license activator) are provided in the `src/` folder._
-
+# 🧪 Assignment – Lab 1  
+## Installation and Configuration of Simatic Manager (STEP 7 Professional 2017)
 
 ---
 
-## 🎯 Objectives
+## 🧩 Task Overview  
 
-- [ ] Install and set up **STEP 7 Professional 2017**.
-- [ ] Activate the software using the provided utility.
-- [ ] Resolve typical installation and startup issues.
-- [ ] Validate the environment for programming Siemens S7 PLCs.
+In this lab, students will install and configure **STEP 7 Professional 2017** to enable programming of Siemens S7 PLCs. By the end of this task, each student should have a fully operational development environment.
 
----
-
-## 📂 Folder Contents (`src/`) 
-
-```plaintext
-📁 src/
-├── STEP 7 PRO 2017 - Instructions for installation.pdf       
-└── Configuring VIPA modules in STEP 7 Simatic Manager.pdf                      
-```
+_All required files (installation package and license activator) are located in the `src/` folder._
 
 ---
 
-## ⚙️ Procedure Overview 
+## 🎯 Objectives  
 
-### ➤ Installation Workflow  
-1. A non-system disk is selected for file extraction to avoid conflicts with system processes.  
-2. The initial installer is launched to unpack all components.  
-3. `setup.exe` is initiated, and only necessary modules are selected.  
-4. The license agreement is accepted, and permissions for system modifications are granted.  
-5. During installation, the system undergoes multiple restarts (without full shutdown).  
-6. Upon completion, a confirmation message is displayed.
-
-### ➤ Activation Process  
-- After installation, the option to **defer license transfer** is chosen.  
-- The utility `SIM_EKB_Install_2018_11_14.exe` is launched with administrative privileges.  
-- Four standard steps are followed to apply the license key.  
-- No activation errors are encountered.
-
-### ➤ First Launch and Optimization  
-- Simatic Manager is launched successfully.  
-- For stability, the program is executed with administrator rights.
-
-
-
-### 🛠 Basic Configuration of Simatic Manager
-
-After successful installation and activation, the following initial configuration steps were performed to ensure a working development environment for S7 PLCs:
-
-- 🔹 **Selected PLC Family**: Configured for S7-300/400 series development  
-- 🔹 **Created a new project**: “Lab1_TEST_S7” as a base project structure  
-- 🔹 **Added Hardware Configuration**: Inserted CPU (e.g., 315-2 DP) into hardware config  
-- 🔹 **Configured MPI/DP Interface**: Set interface parameters for future simulations or device communication  
-- 🔹 **Verified HW Configuration**: Used “Save and Compile” to ensure no configuration conflicts  
-- 🔹 **Opened Programming Blocks**: Accessed OB1, created example ladder logic block for connectivity check  
-- 🔹 **Simulated compile**: Ensured the project compiles without errors using offline mode
+- [ ] Set up the STEP 7 Professional 2017 software  
+- [ ] Activate the license using the provided tool  
+- [ ] Address common installation and launch challenges  
+- [ ] Validate environment readiness for programming S7 PLCs  
 
 ---
 
-### 🚧 Issues Encountered and Resolved
+## 🧱 Expected Outcomes  
 
-<table>
-  <thead>
-    <tr>
-      <th>Challenge</th>
-      <th>Resolution</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Software required multiple restarts</td>
-      <td>Used <strong>Restart</strong> instead of Shutdown</td>
-    </tr>
-    <tr>
-      <td>Activation warning messages</td>
-      <td>Resolved via SIM_EKB utility</td>
-    </tr>
-    <tr>
-      <td>Launch errors</td>
-      <td>Solved by using <strong>Run as Administrator</strong></td>
-    </tr>
-  </tbody>
-</table>
+Students should submit evidence of:
 
---- 
+- A successful installation and activation  
+- A configured base project (“Lab1_TEST_S7”) targeting S7-300/400 series  
+- Inclusion of CPU hardware configuration (e.g., 315-2 DP)  
+- Properly set MPI/DP communication parameters  
+- Creation of basic ladder logic blocks and confirmation of offline compilation  
 
-## 🧠 Results & Reflection 
+---
 
-Simatic Manager (STEP 7 PRO 2017) was successfully installed, activated, and configured to support development with Siemens S7 PLCs. The environment now runs smoothly, and all essential components operate without errors.
+## ⚙️ Instructions  
 
-Key outcomes include:
+### ➤ Installation Procedure  
 
-- ✅ **Stable Installation**: Choosing a non-system disk and allowing system restarts ensured a clean setup.  
-- 🔑 **License Activation**: The provided SIM_EKB utility applied the key without issue, avoiding delays.  
-- ⚙️ **First Launch Readiness**: Running the program as administrator resolved initial access errors.  
-- 🧱 **Configuration Success**: The hardware setup for S7-300/400 series was completed, including CPU insertion, MPI/DP interface parameters, and sample ladder logic blocks. Compilation tests confirmed that the project builds successfully in offline mode.  
+1. Extract files to a **non-system disk** to avoid conflicts  
+2. Launch installer to unpack components  
+3. Run `setup.exe`, select required modules  
+4. Accept the license terms and provide necessary permissions  
+5. Allow system to restart as prompted  
+6. Confirm completion via installer message  
 
-This lab reinforced procedural accuracy during installation, attention to detail during activation, and confidence in managing industrial development environments. Through hands-on steps and resolution of common errors, the exercise deepened understanding of PLC programming infrastructure and created a functional base for upcoming programming labs.
+### ➤ Activation Steps  
 
+1. Choose “Defer license transfer” if prompted  
+2. Run `SIM_EKB_Install_2018_11_14.exe` as Administrator  
+3. Follow the utility's standard activation procedure  
+4. Confirm successful license application  
+
+### ➤ First Launch  
+
+- Run **Simatic Manager** with administrative privileges  
+- Confirm clean launch without errors  
+
+---
+
+## 🧪 Configuration Checklist  
+
+- [ ] Select target PLC family (S7-300/400)  
+- [ ] Create a new project file  
+- [ ] Insert and configure CPU module  
+- [ ] Set MPI/DP communication parameters  
+- [ ] Validate configuration using “Save and Compile”  
+- [ ] Create and edit OB1 block with sample ladder logic  
+- [ ] Verify offline compilation success  
+
+---
+
+## 🚨 Troubleshooting Tips  
+
+| Issue                         | Suggested Solution               |
+|------------------------------|----------------------------------|
+| Restart prompts               | Use Restart—not Shutdown         |
+| Activation warnings           | Follow SIM_EKB activation steps  |
+| Launch errors                 | Use “Run as Administrator”       |
+
+---
+
+## 🧾 Final Notes  
+
+After completing all steps, your system should be ready to program Siemens S7 PLCs. Successful activation and base configuration of Simatic Manager ensure a stable starting point for future labs.
+
+Feel free to use this file as your go-to reference when setting up new projects or revisiting the environment. It’s designed to be practical and adaptable, not tied to formal deadlines.
+
+> May your setup stay smooth, your ladder logic flow clean, and your diagnostics stay silent. 💡
