@@ -1,127 +1,82 @@
-# Assignment Report – Lab 4  
-## Timer Operation and Memory Structure in SIMATIC STEP 7 – Code Lock Control System  
+# 🧪 Assignment – Lab 4  
+## Code Lock Control with Memory and Timing Logic in SIMATIC STEP 7
+
 ---
 
-## 🧩 Task Description 
+## 🧩 Task Overview  
 
-Design and implement a digital code lock using **SIMATIC STEP 7**, with a specific input sequence (0-6-1-3) to unlock the system. The control algorithm uses SR-trigger logic and memory markers. The lock opens for a set time if the correct sequence is entered; otherwise, it resets.
+In this lab, you'll design a digital code lock using **SIMATIC STEP 7**, triggered by a specific input sequence: **0 → 6 → 1 → 3**. The control logic uses SR-trigger networks, memory markers, and pulse timers to manage validation and timed unlocking. Simulation is done using **S7-PLCSIM**.
 
-_All reference files (program listings, tables, logic expressions, screenshots) are provided in the `src/` folder._
+> Full implementation guidance and logic references are available in `lab_4_methodological_instructions.pdf`.
 
 ---
 
 ## 🎯 Objectives  
 
-- [ ] Explore memory blocks (M), inputs (I), and outputs (Q) in S7 controllers  
-- [ ] Use SR-triggers to track step-by-step code entry  
-- [ ] Design a logic sequence that handles correct and incorrect input  
-- [ ] Implement timing control for lock activation  
-- [ ] Simulate behavior using **S7-PLCSIM** and analyze lock states  
+- [ ] Assign and configure symbolic memory, input, and output areas  
+- [ ] Use SR-trigger logic and memory bits to track input steps  
+- [ ] Design logic that unlocks only when the full correct sequence is entered  
+- [ ] Add timer logic for timed unlocking and automatic reset  
+- [ ] Simulate all behaviors and transitions in S7-PLCSIM  
 
 ---
 
-## 📂 Folder Contents (`src/`)  
+## 📂 Reference Folder: `src/`  
 
 ```plaintext
 📁 src/
-├── symbol_table_code_lock.csv         # Symbolic address mappings (I/Q/M)
-├── code_lock_OB1_networks.pdf         # Full screenshot of logic networks in OB1
-├── block_descriptions.md              # Commentary on program logic and each network
-├── code_sequence_result_log.txt       # Step-by-step state transitions during testing
-├── simulation_output_lock_cycle.png   # Visual result of lock opening and closing sequence
+├── symbol_table_code_lock.csv         
+├── code_lock_OB1_networks.pdf         
+├── block_descriptions.md              
+├── code_sequence_result_log.txt       
+└── simulation_output_lock_cycle.png   
 ```
 
 ---
 
-## ⚙️ System Description  
+## ⚙️ Instructions  
 
-The code lock expects the user to enter the sequence: **0 → 6 → 1 → 3**  
-If entered correctly, the lock opens for **3.11 seconds**, then automatically closes.
+### 🔸 Step 1: Memory & Input Mapping  
 
-### 🔹 Implementation Strategy  
-- Memory flags (`M1.0`, `M1.2`, `M1.4`, `M1.6`, etc.) store valid input steps  
-- Buttons wired to inputs:  
-  - `I0.0` → Key “0”  
-  - `I0.6` → Key “6”  
-  - `I0.1` → Key “1”  
-  - `I0.3` → Key “3”
+- Inputs:  
+  - `I0.0` → “0”  
+  - `I0.6` → “6”  
+  - `I0.1` → “1”  
+  - `I0.3` → “3”  
+- Memory bits used:  
+  - `M20.0–M23.0` → Valid input states  
+  - `M10.0–M13.0` → Edge detection  
+  - `M1.6` and `M2.0` → Unlock state and output  
 
-### 🔹 Logic Summary (by Network)  
+Refer to `symbol_table_code_lock.csv` for full memory mapping.
 
-1. **Network 1**:  
-   Handles first digits and SR-triggered memory tracking.  
-   Inputs activate `M20.0` to `M23.0` if correct key pressed in order.
+### 🔸 Step 2: Logic Construction in OB1  
 
-2. **Network 2**:  
-   Activates pulse timer `S5T#3S110MS` when full sequence is correct.  
-   Sets `M1.6` (lock open) and starts duration tracking.
+1. Use **SR triggers** to manage progression through input sequence  
+2. Apply edge detection on each digit to control sequence tracking  
+3. Reset sequence if incorrect input is detected  
+4. Use Boolean condition: `M20.0 ∧ M21.0 ∧ M22.0 ∧ M23.0` to confirm correct code  
+5. Trigger **pulse timer (`S_PULSE`)** to open lock for 3.11 seconds  
 
-3. **Networks 3–6**:  
-   Handle individual digit presses with positive edge detection (P):  
-   `M10.0` for “0”, `M11.0` for “6”, etc.  
-   These flags reset if incorrect digit follows.
+Reference logic segments and comments in `code_lock_OB1_networks.pdf` and `block_descriptions.md`.
 
-4. **Network 7**:  
-   Logic check for full code: `M20.0 ∧ M21.0 ∧ M22.0 ∧ M23.0`  
-   If true → triggers lock opening condition (`M90.0 = 1`)
+### 🔸 Step 3: Simulation  
 
----
+- Launch project in S7-PLCSIM  
+- Simulate the full unlock flow by entering digits sequentially  
+- Observe behavior when incorrect digits are entered  
+- Capture and confirm output timing behavior  
 
-## ⏱ Timing & Behavior  
-
-<table>
-  <thead>
-    <tr>
-      <th>Sequence Step</th>
-      <th>Input</th>
-      <th>Memory Bit</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1st</td>
-      <td>I0.0</td>
-      <td>M20.0</td>
-      <td>Correct key “0” pressed</td>
-    </tr>
-    <tr>
-      <td>2nd</td>
-      <td>I0.6</td>
-      <td>M21.0</td>
-      <td>Key “6”, after “0”</td>
-    </tr>
-    <tr>
-      <td>3rd</td>
-      <td>I0.1</td>
-      <td>M22.0</td>
-      <td>Key “1”, after “6”</td>
-    </tr>
-    <tr>
-      <td>4th</td>
-      <td>I0.3</td>
-      <td>M23.0</td>
-      <td>Final key “3” → unlock!</td>
-    </tr>
-  </tbody>
-</table>
-
-- Timer: `S_PULSE` set to `S5T#3S110MS` (lock opens for 3.11s)  
-- Output controlled via marker `M2.0`  
-- Full cycle visualized in `simulation_output_lock_cycle.png`  
+Output cycle is visualized in `simulation_output_lock_cycle.png`.
 
 ---
 
-## ✅ Results & Reflection  
+## 🧾 Final Notes  
 
-Simulation showed expected functionality across multiple test inputs:
+Upon completion, your code lock logic should:
+- Respond only to the exact input sequence (0-6-1-3)  
+- Remain locked when sequence is broken  
+- Open for the specified duration (3.11s) when correct sequence is met  
+- Reset properly using edge detection and marker bits  
 
-- ✅ Entering incorrect digits resets the sequence  
-- ✅ Only exact 0-6-1-3 opens the lock  
-- ✅ Lock remains open for 3.11 seconds, then returns to secure state  
-- ✅ SR-latch behavior verified using marker bits and conditional resets  
-- ✅ No glitching from repeated digits (e.g. 2-6-6-0 did not trigger unlock)  
-
-> All logical flow and behavior analysis is provided in `code_sequence_result_log.txt` and `block_descriptions.md`.
-
-This lab built strong hands-on skills in managing state-based logic using memory bits, edge detection, and timers within S7 PLC systems. The code lock algorithm could be easily adapted into secure access control or keypad-controlled automation scenarios.
+> Precise memory logic yields reliable access control — no shortcuts allowed. 🧠🔐
