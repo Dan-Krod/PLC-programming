@@ -1,0 +1,2 @@
+F(Q0.1) = A`BC`D`E`
+F(Q0.3) = B`CDE + AB`CD + AB`CE + AB`DE

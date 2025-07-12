@@ -1,0 +1,47 @@
+<table border="1" cellpadding="6" cellspacing="0">
+  <thead>
+    <tr>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+      <th>E</th>
+      <th>Q 0.1</th>
+      <th>Q 0.3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td></td><td></td></tr>
+    <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td></td><td></td></tr>
+    <tr><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td></td><td></td></tr>
+    <tr><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td></td><td></td></tr>
+    <tr><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td></td><td></td></tr>
+    <tr><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td></td><td></td></tr>
+    <tr><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td></td><td></td></tr>
+    <tr><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td></td><td>1</td></tr>
+    <tr><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td></td></tr>
+    <tr><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td></td><td></td></tr>
+    <tr><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td></td><td></td></tr>
+    <tr><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td></td><td></td></tr>
+    <tr><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td></td><td></td></tr>
+    <tr><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td></td><td></td></tr>
+    <tr><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td></td><td></td></tr>
+    <tr><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td></td><td></td></tr>
+    <tr><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td></td><td></td></tr>
+    <tr><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td></td><td></td></tr>
+    <tr><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td></td><td></td></tr>
+    <tr><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td></td><td>1</td></tr>
+    <tr><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td></td><td></td></tr>
+    <tr><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td></td><td>1</td></tr>
+    <tr><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td></td><td>1</td></tr>
+    <tr><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td></td><td>1</td></tr>
+    <tr><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td></td><td></td></tr>
+    <tr><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td></td><td></td></tr>
+    <tr><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td></td><td></td></tr>
+    <tr><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td></td><td></td></tr>
+    <tr><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td></td><td></td></tr>
+    <tr><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td></td><td></td></tr>
+    <tr><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td></td><td></td></tr>
+    <tr><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td></td><td></td></tr>
+  </tbody>
+</table>
